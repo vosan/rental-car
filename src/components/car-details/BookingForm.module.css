@@ -1,0 +1,151 @@
+.panel {
+  min-width: 0;
+  padding: 32px;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.heading {
+  margin-bottom: 24px;
+}
+
+.heading h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.heading p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.fields {
+  display: grid;
+  gap: 16px;
+}
+
+.field {
+  position: relative;
+  min-width: 0;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  height: 48px;
+  margin: 0;
+  padding: 13px 19px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: var(--color-field);
+  color: var(--color-text);
+  font: inherit;
+  line-height: 20px;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.input::placeholder {
+  color: var(--color-muted);
+  opacity: 1;
+}
+
+.input:focus-visible {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgb(0 170 212 / 15%);
+}
+
+.input:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.input[aria-invalid='true'] {
+  padding-right: 47px;
+  border-color: var(--color-error);
+  background: var(--color-error-background);
+}
+
+.input[aria-invalid='true']:focus-visible {
+  box-shadow: 0 0 0 3px rgb(236 56 59 / 15%);
+}
+
+.comment {
+  height: 88px;
+  min-height: 88px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  resize: vertical;
+}
+
+.errorLabel {
+  position: absolute;
+  z-index: 1;
+  top: -9px;
+  left: 12px;
+  padding: 0 8px;
+  border-radius: 8px;
+  background: var(--color-error-background);
+  color: var(--color-error);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.errorIcon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: var(--color-error);
+  pointer-events: none;
+}
+
+.fieldError {
+  margin: 0;
+  color: var(--color-error);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.submit {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.requestError,
+.success {
+  margin: 16px 0 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.requestError {
+  color: var(--color-error);
+}
+
+.success {
+  padding: 12px 16px;
+  border: 1px solid var(--color-primary);
+  border-radius: 12px;
+  background: var(--color-field);
+  color: var(--color-text);
+}
+
+@media (max-width: 1000px) {
+  .panel {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 760px) {
+  .panel {
+    grid-row: 3;
+  }
+}

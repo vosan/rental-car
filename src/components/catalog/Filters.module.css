@@ -1,0 +1,265 @@
+.form {
+  display: grid;
+  grid-template-columns: 204px 196px 320px 156px;
+  align-items: start;
+  gap: 16px;
+  width: 924px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.brand,
+.price,
+.selectField {
+  min-width: 0;
+}
+
+.selectField {
+  position: relative;
+}
+
+.label {
+  display: block;
+  padding: 0;
+  margin-bottom: 8px;
+  color: var(--color-muted);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.selectButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 11px 15px;
+  color: var(--color-text);
+  background: var(--color-field);
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.selectButton:disabled {
+  cursor: wait;
+  color: var(--color-muted);
+}
+
+.selectValue {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chevron {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  transition: transform 150ms ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.options {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  left: 0;
+  z-index: 10;
+  max-height: 272px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  border: 1px solid var(--color-field);
+  border-radius: 12px;
+  color: var(--color-muted);
+  background: #fff;
+  box-shadow: 0 4px 16px rgb(16 24 40 / 8%);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.option {
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.activeOption {
+  color: var(--color-text);
+  background: var(--color-field);
+}
+
+.selectedOption {
+  color: var(--color-text);
+}
+
+.mileage {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.mileageControls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.mileageField {
+  min-width: 0;
+}
+
+.mileageInput {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  padding: 11px 15px;
+  border: 1px solid transparent;
+  border-radius: 12px 0 0 12px;
+  color: var(--color-text);
+  background: var(--color-field);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.mileageField + .mileageField .mileageInput {
+  border-left-color: var(--color-border);
+  border-radius: 0 12px 12px 0;
+}
+
+.mileageInput input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.mileageInput:focus-within {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-top: 24px;
+}
+
+.search {
+  width: 100%;
+  min-height: 44px;
+}
+
+.clear {
+  border: 0;
+  border-radius: 2px;
+  padding: 0;
+  color: var(--color-text);
+  background: none;
+  font-size: 12px;
+  line-height: 16px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.clear:hover {
+  color: var(--color-primary-hover);
+}
+
+.clear:disabled {
+  color: var(--color-muted);
+  cursor: wait;
+}
+
+.invalid,
+.mileageField + .mileageField .invalid {
+  border-color: var(--color-error);
+  background: var(--color-error-background);
+}
+
+.error {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  margin-top: 4px;
+  color: var(--color-error);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.error svg {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  margin-top: 1px;
+}
+
+@media (max-width: 1050px) {
+  .form {
+    width: 100%;
+    grid-template-columns: minmax(160px, 1fr) minmax(160px, 1fr) minmax(250px, 1.5fr);
+  }
+
+  .actions {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+    padding-top: 4px;
+  }
+
+  .search {
+    width: 156px;
+  }
+}
+
+@media (max-width: 650px) {
+  .form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mileage {
+    grid-column: 1 / -1;
+  }
+
+  .selectButton,
+  .mileageInput {
+    font-size: 14px;
+  }
+
+  .options {
+    max-height: 224px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chevron {
+    transition: none;
+  }
+}

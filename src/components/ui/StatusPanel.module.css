@@ -1,0 +1,6 @@
+.panel { max-width: 520px; min-height: 520px; margin: 0 auto; padding: 80px 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; text-align: center; }
+.panel h1 { font-size: 28px; line-height: 1.3; }
+.panel p { color: #667085; line-height: 1.5; }
+.icon { color: var(--color-primary-hover); }
+.spinner { width: 40px; height: 40px; border: 3px solid #d5eef4; border-top-color: var(--color-primary); border-radius: 50%; animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }

@@ -1,0 +1,8 @@
+.header { background: white; border-bottom: 1px solid #f2f4f7; }
+.inner { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.logo { font-size: 20px; font-weight: 800; letter-spacing: -.04em; line-height: 24px; }
+.logo span { color: var(--color-primary); }
+.navigation { display: flex; gap: 32px; font-size: 16px; line-height: 20px; }
+.navigation a { transition: color 150ms ease; }
+.navigation a:hover, .navigation a[aria-current='page'] { color: var(--color-primary-hover); }
+@media (max-width: 600px) { .navigation { gap: 20px; font-size: 14px; } }

@@ -1,0 +1,5 @@
+.wrapper { position: relative; width: 100%; overflow: hidden; background: #e9edf0; }
+.card { aspect-ratio: 244 / 268; border-radius: 14px; }
+.detail { aspect-ratio: 640 / 512; border-radius: 16px; }
+.image { object-fit: cover; }
+.fallback { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; color: #667085; font-size: 14px; }

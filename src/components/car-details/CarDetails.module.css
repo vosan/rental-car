@@ -1,0 +1,152 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 640fr) minmax(0, 528fr);
+  align-items: start;
+  gap: 32px;
+  padding-top: 84px;
+  padding-bottom: 176px;
+}
+
+.leftColumn {
+  display: grid;
+  gap: 32px;
+  min-width: 0;
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--color-border);
+}
+
+.information {
+  min-width: 0;
+  min-height: 968px;
+  padding: 32px 24px;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.identity {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 16px;
+  margin-bottom: 8px;
+}
+
+.identity h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  overflow-wrap: anywhere;
+}
+
+.article {
+  margin: 0;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 0 16px;
+}
+
+.location svg {
+  flex: 0 0 16px;
+}
+
+.price {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.description {
+  margin: 32px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.sections {
+  display: grid;
+  gap: 24px;
+  margin-top: 68px;
+}
+
+.section h2 {
+  margin: 0 0 20px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.section + .section {
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+.list {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  overflow-wrap: anywhere;
+}
+
+.list svg {
+  flex: 0 0 16px;
+  margin-top: 2px;
+}
+
+@media (max-width: 1000px) {
+  .layout {
+    gap: 24px;
+    padding-top: 56px;
+    padding-bottom: 80px;
+  }
+
+  .information {
+    min-height: 0;
+  }
+
+  .sections {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 760px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding-top: 32px;
+    padding-bottom: 48px;
+  }
+
+  .leftColumn {
+    display: contents;
+  }
+
+  .image {
+    grid-row: 1;
+  }
+
+  .information {
+    grid-row: 2;
+  }
+}
