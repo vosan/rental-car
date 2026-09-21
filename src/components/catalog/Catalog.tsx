@@ -140,7 +140,7 @@ export function Catalog() {
           </div>
         ) : cars.length === 0 ? (
           <div className={styles.empty}>
-            <Image src="/images/no-cars.png" width={320} height={320} alt="" className={styles.emptyImage} />
+            <Image src="/images/no-cars.png" width={320} height={320} alt="" loading="eager" className={styles.emptyImage} />
             <h2>No cars found</h2>
             <p>We couldn’t find any cars matching your filters.<br />Try changing your search or reset the filters.</p>
             <button type="button" className="buttonSecondary" onClick={handleClear} disabled={applying}>Reset filters</button>
@@ -155,7 +155,12 @@ export function Catalog() {
               </div>
             )}
             <ul className={styles.grid}>
-              {cars.map((car) => <li key={car.id}><CarCard car={car} /></li>)}
+              {/* Any image in the first desktop row can become the LCP element. */}
+              {cars.map((car, index) => (
+                <li key={car.id}>
+                  <CarCard car={car} imageLoading={index < 4 ? 'eager' : 'lazy'} />
+                </li>
+              ))}
             </ul>
             {(carsQuery.hasNextPage || carsQuery.isFetchNextPageError) && (
               <div className={styles.pagination}>

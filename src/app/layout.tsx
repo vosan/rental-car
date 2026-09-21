@@ -3,6 +3,9 @@ import type { ReactNode } from 'react';
 import Header from '@/components/layout/Header';
 import Providers from './providers';
 import './globals.css';
+// Next.js preloads fallback-route CSS even when the fallback is not rendered.
+// Load these small shared styles here so that preload is always consumed.
+import '@/components/ui/StatusPanel.module.css';
 
 export const metadata: Metadata = {
   title: { default: 'RentalCar — Find your perfect rental car', template: '%s | RentalCar' },

@@ -3,12 +3,12 @@ import { CarImage } from '@/components/ui/CarImage';
 import { formatMileage, formatPrice } from '@/lib/formatters';
 import styles from './CarCard.module.css';
 
-export function CarCard({ car }: { car: Car }) {
+export function CarCard({ car, imageLoading = 'lazy' }: { car: Car; imageLoading?: 'eager' | 'lazy' }) {
   const name = `${car.brand} ${car.model}, ${car.year}`;
 
   return (
     <article className={styles.card}>
-      <CarImage src={car.img} alt={name} variant="card" />
+      <CarImage src={car.img} alt={name} variant="card" loading={imageLoading} />
       <div className={styles.content}>
         <div className={styles.heading}>
           <h2>{car.brand} <span>{car.model}</span>, {car.year}</h2>
